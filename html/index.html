@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La liste de contacts</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h4>Le carnet d'adresses local</h4>
+    </div>
+
+    <div class="title">
+        <h1>Gérer la liste de contacts</h1>
+        <div class="btn">
+            <button class="btnAdd" id="btnAdd"><img src="../images/add.svg" alt="Ajouter"></button>
+            <button class="btnDelete"><img src="../images/delete.svg" alt="Supprimer"></button>
+        </div>
+    </div>
+
+ 
+    <div class="SaveList">
+        <h3>Contacts enregistrés</h3>
+        <p>Aucun contact enregistré</p>
+        <div class="Contact">
+          <h5><img src="../images/profile.svg" alt="Profil">René Durand</h5>
+      </div>
+      <div class="Contact">
+          <h5><img src="../images/profile.svg" alt="Profil">René Durand</h5>
+      </div>
+    </div>
+
+
+    
+
+
+    
+      <form class="Formulaire" method="post">
+        <fieldset>
+          <legend>Saisie/modification d'un contact</legend>
+          <label for="civilite">Civilité</label> <br />
+          <select name="civilite" id="civilite">
+            <option value="madame">Madame</option>
+            <option value="monsieur">Monsieur</option>
+          </select>
+          <br />
+          <label for="prenom">Prénom</label> <br />
+          <input type="text" id="prenom" name="prenom" /><br />
+          <label for="nom">Nom</label> <br />
+          <input type="text" id="nom" name="nom" /><br />
+          <label for="telephone">Téléphone</label> <br />
+          <input type="tel" id="telephone" name="telephone" /><br />
+          <button type="submit" onclick="add_Contacts()">Enregistrer</button>
+          <button type="reset">Effacer</button>
+        </fieldset>
+      </form>
+
+
+
+    
+</div>
+<script src="../js/script.js"></script>
+<script src="../js/form.js"></script>
+</body>
+</html>
