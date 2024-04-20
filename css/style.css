@@ -14,6 +14,8 @@
     background-repeat: no-repeat; 
     background-size: cover;
     background-image: url(../images/background.jpg);
+    flex-direction: row;
+    justify-content: baseline;
     
 }
 
@@ -93,7 +95,7 @@ button img {
     position: relative; /* ou absolute, fixed, ou sticky */
     top: 130px;
     left: 20px;
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -134,10 +136,7 @@ button img {
 
 }
 
-.Contact:active {
-    background-color: rgb(224, 78, 5);
 
-}
 
 .Contact img {
     width: 18px;
@@ -168,6 +167,7 @@ p {
     margin: 30px;
     margin-top: -123px;
     border-radius: 2px;
+   /* display: none;*/
   }
   .edit-button {
     background-color: rgba(227, 80, 12, 0.965);
@@ -196,6 +196,10 @@ form {
   margin-right: 40px;
   border-radius: 5px;
   float: right;
+  display: none; /* Cacher le formulaire initialement */
+  margin-top: -123px;
+
+
 }
 fieldset {
   background-color: none; /* Nouvelle couleur de fond */
@@ -234,6 +238,10 @@ select {
   border-radius: 3px;
 }
 
+
+
+
+
 /* Style pour les boutons */
 .Formulaire button {
   background-color: rgba(227, 80, 12, 0.965);
@@ -253,6 +261,20 @@ select {
 
 
 
-.Formulaire {
-    display: none; /* Cacher le formulaire initialement */
+
+
+
+/* Style pour la div Contact sélectionnée */
+.Contact.selected {
+  background-color: rgba(227, 80, 12, 0.965); /* Fond en orange lorsque la div est sélectionnée */
+  color: white; /* Couleur du texte en blanc pour un contraste élevé */
+  cursor: pointer; /* Curseur de souris indiquant que l'élément est cliquable */
+  /* Autres styles selon vos besoins */
 }
+
+
+.Formulaire{
+  display: none;
+}
+
+

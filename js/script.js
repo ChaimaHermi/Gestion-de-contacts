@@ -2,8 +2,10 @@
 
   var addButton = document.getElementById('btnAdd');
   var formulaire = document.querySelector('.Formulaire');
+  var detailContact = document.querySelector('.detail_contact');
   addButton.onclick = function() {
       formulaire.style.display = 'block';
+      detailContact.style.display = 'none'
   };
 
 
@@ -87,3 +89,92 @@ function showContacts() {
 document.addEventListener('DOMContentLoaded', () => {
   showContacts();
 });
+
+
+
+
+
+
+
+// Fonction pour rechercher un contact dans la liste stockée dans le localStorage
+function find_contact(nom, prenom) {
+  const contactsList = JSON.parse(localStorage.getItem('contacts')) || [];
+  return contactsList.find(contact => {
+      return contact.nom === nom && contact.prenom === prenom;
+  });
+}
+
+// Fonction pour afficher les détails du contact dans la div des détails du contact
+function showDetailContact(civilite , nom, prenom, telephone ) {
+
+  formulaire.style.display = 'none';
+  detailContact.style.display = 'block'
+  const detailContactInfo = document.querySelector('.detail_contact p');
+
+  if (civilite && nom && prenom && telephone) {
+      detailContactInfo.innerHTML = `${civilite} ${nom} ${prenom} <br>Tel: ${telephone}`;
+  } 
+}
+
+// Fonction pour sélectionner un contact lors du clic
+function selectContact(clickedContact) {
+  // Désélectionner tous les contacts précédemment sélectionnés
+  document.querySelectorAll('.Contact.selected').forEach(contact => {
+      contact.classList.remove('selected');
+  });
+
+  // Sélectionner uniquement la div cliquée (si c'est une div de contact)
+  if (clickedContact) {
+      // Ajouter la classe 'selected' à la div cliquée
+      clickedContact.classList.add('selected');
+
+      // Récupérer le nom et prénom du contact à partir du texte affiché
+      const contactText = clickedContact.querySelector('h5').textContent;
+      const [nom, prenom] = contactText.trim().split(' ');
+
+      // Rechercher le contact dans la liste stockée dans le localStorage
+      const foundContact = find_contact(nom, prenom);
+
+      // Afficher les détails du contact dans la div des détails du contact
+      if (foundContact) {
+          const { civilite,nom, prenom, telephone } = foundContact;
+          showDetailContact(civilite,nom, prenom, telephone);
+      } else {
+          showDetailContact(); // Afficher le message "Contact non trouvé."
+      }
+  }
+}
+
+
+
+
+// Sélectionner le conteneur des contacts
+const contactsContainer = document.querySelector('.contactsContainer');
+
+// Ajouter un gestionnaire d'événements au conteneur des contacts
+contactsContainer.addEventListener('click', event => {
+  const clickedContact = event.target.closest('.Contact');
+  selectContact(clickedContact);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
