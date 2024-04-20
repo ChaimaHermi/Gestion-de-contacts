@@ -10,15 +10,11 @@
 
 
   function save_data(contact) {
-    // Récupérer les contacts existants depuis le localStorage
     var contacts = JSON.parse(localStorage.getItem("contacts")) || [];
-  
     // Ajouter le nouveau contact à la liste des contacts
     contacts.push(contact);
-  
     // Convertir la liste des contacts en chaîne JSON
     var jsonData = JSON.stringify(contacts);
-  
     // Stocker la chaîne JSON mise à jour dans le localStorage
     localStorage.setItem("contacts", jsonData);
   }
@@ -46,3 +42,48 @@
     document.querySelector("form").reset();
   }
   
+
+
+
+// Fonction pour récupérer les contacts depuis le localStorage
+function getContacts() {
+  const savedContactsJSON = localStorage.getItem('contacts');
+  return savedContactsJSON ? JSON.parse(savedContactsJSON) : []; //Le rôle de JSON.parse() dans JavaScript est de convertir une chaîne JSON (JavaScript Object Notation) en objet JavaScript. Voici une explication détaillée :
+}
+
+
+// Fonction pour afficher les contacts dans la page
+function showContacts() {
+  const saveList = document.querySelector('.SaveList');
+  const contactsContainer = saveList.querySelector('.contactsContainer');
+  const noContactsMessage = saveList.querySelector('.noContactsMessage');
+  
+  // Efface le contenu existant des contacts
+  //contactsContainer.innerHTML = '';
+
+  // Récupère les contacts depuis le localStorage
+  const contacts = getContacts();
+
+  if (contacts.length === 0) {
+      // Aucun contact enregistré
+      noContactsMessage.style.display = 'block';
+  } else {
+      // Au moins un contact enregistré
+      noContactsMessage.style.display = 'none';
+
+      // Ajoute chaque contact dans le conteneur des contacts
+      contacts.forEach(contact => {
+          const contactElement = document.createElement('div');
+          contactElement.classList.add('Contact');
+          contactElement.innerHTML = `
+              <h5><img src="../images/profile.svg" alt="Profil">${contact.nom} ${contact.prenom}</h5>
+          `;
+          contactsContainer.appendChild(contactElement);
+      });
+  }
+}
+
+// Appel de la fonction showContacts pour afficher les contacts au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+  showContacts();
+});
