@@ -70,6 +70,8 @@ function showContacts() {
       // Aucun contact enregistré
       noContactsMessage.style.display = 'block';
   } else {
+     tri_contacts (contacts) ;
+
       // Au moins un contact enregistré
       noContactsMessage.style.display = 'none';
 
@@ -141,6 +143,7 @@ function selectContact(clickedContact) {
           showDetailContact(civilite,nom, prenom, telephone);
       } else {
           showDetailContact(); // Afficher le message "Contact non trouvé."
+
       }
   }
 }
@@ -165,7 +168,55 @@ contactsContainer.addEventListener('click', event => {
 
 
 
+//tri contact
+function tri_contacts(contacts) {
+  contacts.sort((a, b) => {
+    if (a.nom === b.nom) {
+      return a.prenom.localeCompare(b.prenom);
+    }
+    return a.nom.localeCompare(b.nom);
+  });
+}
 
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionner le bouton de suppression
+  var deleteButton = document.querySelector(".btnDelete");
+
+  // Ajouter un gestionnaire d'événements au bouton de suppression
+  deleteButton.addEventListener("click", function () {
+    // Supprimer les données du local storage
+    localStorage.removeItem("contacts");
+
+    // Sélectionner tous les éléments de la liste des contacts
+    var contactList = document.querySelectorAll(".Contact");
+
+    // Supprimer chaque élément de la liste
+    contactList.forEach(function (contact) {
+      contact.remove();
+    });
+
+    // Vérifier si la liste est vide
+    if (document.querySelectorAll(".Contact").length === 0) {
+      // Afficher le message "Aucun contact enregistré"
+      var noContactsMessage = document.querySelector(".noContactsMessage");
+
+      // Afficher l'élément
+      noContactsMessage.style.display = "block";
+    }
+  });
+
+  // Vérifier si la liste est vide
+  if (document.querySelectorAll(".Contact").length === 0) {
+    // Aucun contact enregistré
+    var noContactsMessage = document.querySelector(".noContactsMessage");
+    noContactsMessage.style.display = "block";
+  }
+});
 
 
 

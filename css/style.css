@@ -167,7 +167,7 @@ p {
     margin: 30px;
     margin-top: -123px;
     border-radius: 2px;
-   /* display: none;*/
+   display: none;
   }
   .edit-button {
     background-color: rgba(227, 80, 12, 0.965);
