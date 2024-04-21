@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Afficher le formulaire avec les valeurs pré-remplies
         var form = document.querySelector(".Formulaire");
         form.style.display = "block";
-
+        detailContact.style.display = 'none'; 
         // Pré-remplir les champs du formulaire avec les valeurs récupérées
         var civiliteInput = document.querySelector("#civilite");
         var nomInput = document.querySelector("#nom");

@@ -54,6 +54,11 @@ function find_contact(telephone) {
 
 
 function showDetailContact(civilite, nom, prenom, telephone) {
+
+  var form = document.querySelector(".Formulaire");
+  form.style.display = "none";
+
+
   // Sélection de l'élément contenant les détails du contact
   const detailContactDiv = document.querySelector('.detail_contact');
 

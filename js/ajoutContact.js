@@ -7,6 +7,7 @@ addButton.onclick = function() {
     formulaire.style.display = 'block';
     detailContact.style.display = 'none'
 };
+
 function add_Contacts() {
   // Récupérer les valeurs des champs du formulaire
   var civilite = document.getElementById("civilite").value;
@@ -14,7 +15,13 @@ function add_Contacts() {
   var nom = document.getElementById("nom").value;
   var telephone = document.getElementById("telephone").value;
 
-  // Vérifier si le numéro de téléphone existe déjà dans le local storage
+  // Vérifier que tous les champs sont remplis
+  if (civilite.trim() === '' || prenom.trim() === '' || nom.trim() === '' || telephone.trim() === '') {
+    alert("Veuillez remplir tous les champs du formulaire.");
+    return; // Arrêter l'exécution si un champ est vide
+  }
+
+  // Récupérer les contacts existants depuis le local storage
   var existingContacts = localStorage.getItem("contacts");
   var contacts = existingContacts ? JSON.parse(existingContacts) : [];
 
@@ -48,5 +55,3 @@ function add_Contacts() {
     alert("Le contact a été ajouté avec succès.");
   }
 }
-
-  
