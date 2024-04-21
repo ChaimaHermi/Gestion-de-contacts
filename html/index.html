@@ -35,9 +35,15 @@
 
 
   <div class="detail_contact">
+    <h3>Détail du contact</h3>
+
     <div>
-        <h3>Détail du contact</h3>
-        <p>Monsieur René DURAND<br>Tel: 0102030607</p>
+
+        <p>  <span class="civilite"> Monsieur</span> <span class="nom" >Rene</span> <span class="prenom"> DURAND</span></p>
+    </div>
+
+    <div>
+        <p>Téléphone : <span class="telephone" >54164825</span></p>
     </div>
     <div>
         <button type="submit" class="edit-button">Editer ce contact</button>
@@ -51,8 +57,8 @@
           <legend>Saisie/modification d'un contact</legend>
           <label for="civilite">Civilité</label> <br />
           <select name="civilite" id="civilite">
-            <option value="madame">Madame</option>
-            <option value="monsieur">Monsieur</option>
+            <option value="Madame">Madame</option>
+            <option value="Monsieur">Monsieur</option>
           </select>
           <br />
           <label for="prenom">Prénom</label> <br />
@@ -70,8 +76,12 @@
       
     
 
+
+      <script src="../js/ajoutContact.js"></script>
+      <script src="../js/ListContact.js"></script>
+      <script src="../js/DetailContact.js"></script>
+      <script src="../js/editContact.js"></script>
+      <script src="../js/viderListe.js"></script>
     
-<script src="../js/script.js"></script>
-<script src="../js/form.js"></script>
 </body>
 </html>

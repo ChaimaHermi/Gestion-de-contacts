@@ -106,17 +106,30 @@ function find_contact(nom, prenom) {
   });
 }
 
-// Fonction pour afficher les détails du contact dans la div des détails du contact
-function showDetailContact(civilite , nom, prenom, telephone ) {
+function showDetailContact(civilite, nom, prenom, telephone) {
+  // Sélection de l'élément contenant les détails du contact
+  const detailContactDiv = document.querySelector('.detail_contact');
 
-  formulaire.style.display = 'none';
-  detailContact.style.display = 'block'
-  const detailContactInfo = document.querySelector('.detail_contact p');
+  if (detailContactDiv) {
+    // Mettre à jour le contenu des paragraphes avec les nouvelles données
+    const civilitePara = detailContactDiv.querySelector('.civilite');
+    const nomPara = detailContactDiv.querySelector('.nom');
+    const prenomPara = detailContactDiv.querySelector('.prenom');
+    const telephonePara = detailContactDiv.querySelector('.telephone');
 
-  if (civilite && nom && prenom && telephone) {
-      detailContactInfo.innerHTML = `${civilite} ${nom} ${prenom} <br>Tel: ${telephone}`;
-  } 
+    if (civilitePara && nomPara && prenomPara && telephonePara) {
+      // Mettre à jour le texte des paragraphes avec les nouvelles valeurs
+      civilitePara.textContent = civilite || ''; // Mettre à jour uniquement si civilite est défini
+      nomPara.textContent = nom || ''; // Mettre à jour uniquement si nom est défini
+      prenomPara.textContent = prenom || ''; // Mettre à jour uniquement si prenom est défini
+      telephonePara.textContent = telephone || ''; // Mettre à jour uniquement si telephone est défini
+    }
+
+    // Afficher la div contenant les détails du contact
+    detailContactDiv.style.display = 'block';
+  }
 }
+
 
 // Fonction pour sélectionner un contact lors du clic
 function selectContact(clickedContact) {
@@ -158,6 +171,8 @@ const contactsContainer = document.querySelector('.contactsContainer');
 contactsContainer.addEventListener('click', event => {
   const clickedContact = event.target.closest('.Contact');
   selectContact(clickedContact);
+
+  
 });
 
 
@@ -220,12 +235,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionner le bouton "Editer ce contact"
+  var editButton = document.querySelector(".edit-button");
+
+  // Ajouter un écouteur d'événements pour le clic sur le bouton
+  editButton.addEventListener("click", function () {
+    // Récupérer les valeurs des champs civilite, nom, prenom, telephone
+    var civiliteSpan = document.querySelector(".civilite");
+    var nomSpan = document.querySelector(".nom");
+    var prenomSpan = document.querySelector(".prenom");
+    var telephoneSpan = document.querySelector(".telephone");
+
+    var civilite = civiliteSpan.textContent.trim();
+    var nom = nomSpan.textContent.trim();
+    var prenom = prenomSpan.textContent.trim();
+    var telephone = telephoneSpan.textContent.trim();
+
+    // Afficher le formulaire avec les valeurs pré-remplies
+    var form = document.querySelector(".Formulaire");
+    detailContact.style.display = 'none';
+    form.style.display = "block";
+
+    // Pré-remplir les champs du formulaire avec les valeurs récupérées
+    var civiliteInput = document.querySelector("#civilite");
+    var nomInput = document.querySelector("#nom");
+    var prenomInput = document.querySelector("#prenom");
+    var telephoneInput = document.querySelector("#telephone");
+
+    civiliteInput.value = civilite;
+    nomInput.value = nom;
+    prenomInput.value = prenom;
+    telephoneInput.value = telephone;
+
+    // Ajouter un écouteur d'événements pour le soumission du formulaire
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+      // Récupérer les nouvelles valeurs saisies dans le formulaire
+      var newCivilite = civiliteInput.value.trim();
+      var newNom = nomInput.value.trim();
+      var newPrenom = prenomInput.value.trim();
+      var newTelephone = telephoneInput.value.trim();
+
+      // Supprimer l'objet existant du localStorage s'il existe
+      localStorage.removeItem("contact");
 
 
+      // Créer un nouvel objet avec les nouvelles valeurs
+      var newContact = {
+        civilite: newCivilite,
+        nom: newNom,
+        prenom: newPrenom,
+        telephone: newTelephone
+      };
 
+      // Ajouter le nouvel objet dans le localStorage
+      localStorage.addItem("contact", JSON.stringify(newContact));
 
+      // Afficher un message de confirmation
+      alert("Les données ont été mises à jour dans le localStorage.");
 
+      // Recharger la page pour afficher les nouvelles valeurs (facultatif)
+      location.reload();
+    });
+  });
 
+  // Charger les données du localStorage au chargement de la page
+  var savedContact = localStorage.getItem("contact");
 
+  if (savedContact) {
+    var parsedContact = JSON.parse(savedContact);
 
-
+    // Mettre à jour les valeurs affichées dans les spans avec les données du localStorage
+    document.querySelector(".civilite").textContent = parsedContact.civilite;
+    document.querySelector(".nom").textContent = parsedContact.nom;
+    document.querySelector(".prenom").textContent = parsedContact.prenom;
+    document.querySelector(".telephone").textContent = parsedContact.telephone;
+  }
+});
