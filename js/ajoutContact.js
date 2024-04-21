@@ -1,24 +1,17 @@
-// Click sur Add et apparission de formaulaire 
-
 var addButton = document.getElementById('btnAdd');
 var formulaire = document.querySelector('.Formulaire');
 var detailContact = document.querySelector('.detail_contact');
+
 addButton.onclick = function() {
-    formulaire.style.display = 'block';
-    detailContact.style.display = 'none'
+  formulaire.style.display = 'block';
+  detailContact.style.display = 'none';
 };
 
-
 document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionner le bouton "Enregistrer"
   var saveButton = document.querySelector(".Enregistrer");
 
-  // Ajouter un écouteur d'événements pour le clic sur le bouton "Enregistrer"
-  saveButton.addEventListener("click",add_Contacts)
-  
+  saveButton.addEventListener("click", add_Contacts);
 
-
-  // Écouteur pour le bouton "Ajouter" qui affiche le formulaire
   var addButton = document.getElementById('btnAdd');
   var formulaire = document.querySelector('.Formulaire');
   var detailContact = document.querySelector('.detail_contact');
@@ -30,34 +23,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function add_Contacts() {
-
-
-  // Récupérer les valeurs des champs du formulaire
   var civilite = document.getElementById("civilite").value;
   var prenom = document.getElementById("prenom").value;
   var nom = document.getElementById("nom").value;
   var telephone = document.getElementById("telephone").value;
 
-  // Vérifier que tous les champs sont remplis
   if (civilite.trim() === '' || prenom.trim() === '' || nom.trim() === '' || telephone.trim() === '') {
     alert("Veuillez remplir tous les champs du formulaire.");
-    return; // Arrêter l'exécution si un champ est vide
+    return;
   }
 
-  // Récupérer les contacts existants depuis le local storage
   var existingContacts = localStorage.getItem("contacts");
   var contacts = existingContacts ? JSON.parse(existingContacts) : [];
 
-  // Vérifier si le numéro de téléphone existe déjà dans les contacts
   var isDuplicate = contacts.some(function(contact) {
     return contact.telephone === telephone;
   });
 
   if (isDuplicate) {
-    // Afficher une alerte si le numéro de téléphone existe déjà
     alert("Ce numéro de téléphone existe déjà dans les contacts.");
   } else {
-    // Créer un nouvel objet contact avec les valeurs du formulaire
     var contact = {
       civilite: civilite,
       prenom: prenom,
@@ -65,19 +50,11 @@ function add_Contacts() {
       telephone: telephone,
     };
 
-    // Ajouter le nouveau contact à la liste des contacts
     contacts.push(contact);
-
-    // Enregistrer la liste mise à jour dans le local storage
     localStorage.setItem("contacts", JSON.stringify(contacts));
 
-    // Réinitialiser le formulaire
     document.querySelector("form").reset();
-
-    // Afficher un message de confirmation
     alert("Le contact a été ajouté avec succès.");
-    
-    // Recharger la page pour afficher les mises à jour (vous pouvez remplacer cela par une autre action)
     location.reload();
   }
 }
