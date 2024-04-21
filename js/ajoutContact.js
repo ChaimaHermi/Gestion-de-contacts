@@ -53,5 +53,9 @@ function add_Contacts() {
 
     // Afficher un message de confirmation (vous pouvez remplacer cela par une autre action)
     alert("Le contact a été ajouté avec succès.");
+    
+    // Recharger la page pour afficher les mises à jour
+    location.reload();
   }
+
 }
