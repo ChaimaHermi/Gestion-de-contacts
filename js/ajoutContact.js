@@ -8,7 +8,30 @@ addButton.onclick = function() {
     detailContact.style.display = 'none'
 };
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Sélectionner le bouton "Enregistrer"
+  var saveButton = document.querySelector(".Enregistrer");
+
+  // Ajouter un écouteur d'événements pour le clic sur le bouton "Enregistrer"
+  saveButton.addEventListener("click",add_Contacts)
+  
+
+
+  // Écouteur pour le bouton "Ajouter" qui affiche le formulaire
+  var addButton = document.getElementById('btnAdd');
+  var formulaire = document.querySelector('.Formulaire');
+  var detailContact = document.querySelector('.detail_contact');
+
+  addButton.onclick = function() {
+    formulaire.style.display = 'block';
+    detailContact.style.display = 'none';
+  };
+});
+
 function add_Contacts() {
+
+
   // Récupérer les valeurs des champs du formulaire
   var civilite = document.getElementById("civilite").value;
   var prenom = document.getElementById("prenom").value;
@@ -51,11 +74,10 @@ function add_Contacts() {
     // Réinitialiser le formulaire
     document.querySelector("form").reset();
 
-    // Afficher un message de confirmation (vous pouvez remplacer cela par une autre action)
+    // Afficher un message de confirmation
     alert("Le contact a été ajouté avec succès.");
     
-    // Recharger la page pour afficher les mises à jour
+    // Recharger la page pour afficher les mises à jour (vous pouvez remplacer cela par une autre action)
     location.reload();
   }
-
 }

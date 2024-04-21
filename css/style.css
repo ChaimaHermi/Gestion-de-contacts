@@ -1,65 +1,65 @@
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  
 }
 
 
 .container {
-    width: 100% ;
-    min-height: 100vh;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-image: url(../images/background.jpg);
-    justify-content: baseline;
-    
+  width: 100% ;
+  min-height: 100vh;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-image: url(../images/background.jpg);
+  justify-content: baseline;
   
+
 }
 
 
 
 .header {
-  /* background-color:rgb(136, 172, 184);*/
-   height: 60px; /* Hauteur de l'en-tête */
-   width: 100%; /* Largeur de l'en-tête */
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   padding-left: 10px;
-   background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
+/* background-color:rgb(136, 172, 184);*/
+ height: 60px; /* Hauteur de l'en-tête */
+ width: 100%; /* Largeur de l'en-tête */
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ padding-left: 10px;
+ background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
 
 }
 
 h4 {
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 2vh;
-    font-weight: lighter;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2vh;
+  font-weight: lighter;
 }
 
 
 .title {
-    height: 60px; /* Hauteur de l'en-tête */
-    width: 100%; /* Largeur de l'en-tête */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: 60px; /* Hauteur de l'en-tête */
+  width: 100%; /* Largeur de l'en-tête */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 
 
 h1 {
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 20px;
-    padding-top: 85px;
-    font-weight: bolder;
-    text-align: center;
-    text-shadow: 2px 2px 4px #000000;
-    text-transform: uppercase;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  padding-top: 85px;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000000;
+  text-transform: uppercase;
 }
 
 
@@ -73,81 +73,81 @@ width: 50px;
 
 .btnDelete
 {
-    background-color: rgb(224, 78, 5);
-    border-radius: 5px;
-    border: 2px solid white;
-    height: 50px;
-    width: 50px;
+  background-color: rgb(224, 78, 5);
+  border-radius: 5px;
+  border: 2px solid white;
+  height: 50px;
+  width: 50px;
 
-   
+ 
 }
 button img {
-    height: 30px;
-    width: 30px;
-    padding: auto;
+  height: 30px;
+  width: 30px;
+  padding: auto;
 }
 
-  
+
 .SaveList {
-    background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
-    width : 740px ;
-    border-radius: 3px;
-    position: relative; /* ou absolute, fixed, ou sticky */
-    top: 130px;
-    left: 20px;
-    max-height: 250px;
-    overflow-y: auto;
-    overflow-x: hidden;
+  background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
+  width : 740px ;
+  border-radius: 3px;
+  position: relative; /* ou absolute, fixed, ou sticky */
+  top: 130px;
+  left: 20px;
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
 
 
 
 }
 
- h3 {
-    color: #ffffff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    padding: 15px;
+h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 15px;
 }
 
 
 .Contact{
-    border-radius: 5px;
-    border: 2px solid white;
-    height: 40px;
-    width:650px;
-    margin-left: 15px ;
-    margin-right: 10px;
-    margin-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid white;
+  height: 40px;
+  width:650px;
+  margin-left: 15px ;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
 
 }
 
 .Contact h5 {
-    font-size: 18px;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-weight: lighter;
-    margin-left: 15px ;
-    margin-right: 10px;
-    font-weight: 500;
-    margin-top: 10px;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: lighter;
+  margin-left: 15px ;
+  margin-right: 10px;
+  font-weight: 500;
+  margin-top: 10px;
 
 }
 
 
 
 .Contact img {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 p {
-    color: #ffffff;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 15px; 
+  color: #ffffff;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px; 
 }
 
 
@@ -158,85 +158,85 @@ p {
 /*-----------------------*/
 
 .detail_contact {
-    background-color: #add8e680;
-    width: 700px;
-    height: 40%;
-    color: white;
-    float: right;
-    padding: 10px;
-    margin: 30px;
-    margin-top: -123px;
-    border-radius: 2px;
-   display: none;
-
-  }
-  .edit-button {
-    background-color: rgba(227, 80, 12, 0.965);
-    color: white;
-  
-    border-style: solid;
-    border-color: white;
-    padding: 10px 20px;
-  
-    cursor: pointer;
-    float: left;
-    margin: 20px;
-  }
-  
-
-  /*----------fORMULAIRE----------*/
-
-
-
-  
-form {
-  width:600px ;
-  padding: 20px;
   background-color: #add8e680;
-  border: none;
-  margin-right: 40px;
-  border-radius: 5px;
+  width: 700px;
+  height: 40%;
+  color: white;
   float: right;
-  display: none; /* Cacher le formulaire initialement */
+  padding: 10px;
+  margin: 30px;
   margin-top: -123px;
+  border-radius: 2px;
+ display: none;
+
+}
+.edit-button {
+  background-color: rgba(227, 80, 12, 0.965);
+  color: white;
+
+  border-style: solid;
+  border-color: white;
+  padding: 10px 20px;
+
+  cursor: pointer;
+  float: left;
+  margin: 20px;
+}
+
+
+/*----------fORMULAIRE----------*/
+
+
+
+
+form {
+width:600px ;
+padding: 20px;
+background-color: #add8e680;
+border: none;
+margin-right: 40px;
+border-radius: 5px;
+float: right;
+display: none; /* Cacher le formulaire initialement */
+margin-top: -123px;
 
 
 }
 fieldset {
-  background-color: none; /* Nouvelle couleur de fond */
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 20px;
+background-color: none; /* Nouvelle couleur de fond */
+border: 1px solid white;
+border-radius: 5px;
+padding: 20px;
 }
 legend {
-  background-color: rgb(224, 78, 5);
-  padding: 10px;
-  border-radius: 3px;
-  text-align: left;
-  width: 80%;
-  font-size: 16px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+background-color: rgb(224, 78, 5);
+padding: 10px;
+border-radius: 3px;
+text-align: left;
+width: 80%;
+font-size: 16px;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: lighter;
 }
 
 /* Style pour les étiquettes (labels) */
 label {
-  font-weight: lighter;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+font-weight: lighter;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
 }
 
 /* Style pour les champs de saisie */
 input[type="text"],
 input[type="tel"],
 select {
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+width: 90%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 3px;
 }
 
 
@@ -245,19 +245,19 @@ select {
 
 /* Style pour les boutons */
 .Formulaire button {
-  background-color: rgba(227, 80, 12, 0.965);
-  color: #efebe9;
+background-color: rgba(227, 80, 12, 0.965);
+color: #efebe9;
 
-  padding: 10px 20px;
-  border-color: white; /* Couleur de la bordure blanche */
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border-style: solid;
+padding: 10px 20px;
+border-color: white; /* Couleur de la bordure blanche */
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+border-style: solid;
 
-  margin-right: 10px;
+margin-right: 10px;
 
-  float: right;
+float: right;
 }
 
 
@@ -267,21 +267,21 @@ select {
 
 /* Style pour la div Contact sélectionnée */
 .Contact.selected {
-  background-color: rgba(227, 80, 12, 0.965); /* Fond en orange lorsque la div est sélectionnée */
-  color: white; /* Couleur du texte en blanc pour un contraste élevé */
-  cursor: pointer; /* Curseur de souris indiquant que l'élément est cliquable */
-  /* Autres styles selon vos besoins */
+background-color: rgba(227, 80, 12, 0.965); /* Fond en orange lorsque la div est sélectionnée */
+color: white; /* Couleur du texte en blanc pour un contraste élevé */
+cursor: pointer; /* Curseur de souris indiquant que l'élément est cliquable */
+/* Autres styles selon vos besoins */
 }
 
 
 .Formulaire{
-  display: none;
+display: none;
 }
 
 
 @media screen and (max-width: 1000px) {
 
-  .container {
-      flex-direction: column;
-  }
+.container {
+    flex-direction: column;
+}
 }

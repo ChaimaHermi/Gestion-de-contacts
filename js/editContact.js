@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Sélectionner le bouton "Editer ce contact"
     var editButton = document.querySelector(".edit-button");
-  
+
     // Ajouter un écouteur d'événements pour le clic sur le bouton "Editer ce contact"
     editButton.addEventListener("click", function () {
-        // Récupérer les valeurs des champs civilite, nom, prenom, telephone
+        // Récupérer les valeurs des champs civilite, nom, prenom, telephone depuis les éléments span
         var civiliteSpan = document.querySelector(".civilite");
         var nomSpan = document.querySelector(".nom");
         var prenomSpan = document.querySelector(".prenom");
@@ -18,7 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Afficher le formulaire avec les valeurs pré-remplies
         var form = document.querySelector(".Formulaire");
         form.style.display = "block";
-        detailContact.style.display = 'none'; 
+        detailContact.style.display = 'none';
+
+        var saveButton = document.querySelector(".Enregistrer");
+
+        // Ajouter un écouteur d'événements pour le clic sur le bouton "Enregistrer"
+        saveButton.removeEventListener("click",add_Contacts)
+         
         // Pré-remplir les champs du formulaire avec les valeurs récupérées
         var civiliteInput = document.querySelector("#civilite");
         var nomInput = document.querySelector("#nom");
@@ -32,51 +38,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Sélectionner le bouton "Enregistrer" dans le formulaire
-    var saveButton = document.querySelector("#save-button");
+    var saveButton = document.querySelector(".Enregistrer");
 
     // Ajouter un écouteur d'événements pour le clic sur le bouton "Enregistrer"
     saveButton.addEventListener("click", function (event) {
         event.preventDefault(); // Empêcher le comportement par défaut du formulaire
 
-        // Récupérer les valeurs du formulaire
-        var civiliteValue = document.querySelector("#civilite").value;
-        var nomValue = document.querySelector("#nom").value;
-        var prenomValue = document.querySelector("#prenom").value;
-        var telephoneValue = document.querySelector("#telephone").value;
+        // Récupérer les valeurs mises à jour depuis les champs du formulaire
+        var civilite = document.querySelector("#civilite").value;
+        var nom = document.querySelector("#nom").value;
+        var prenom = document.querySelector("#prenom").value;
+        var telephone = document.querySelector("#telephone").value;
 
-        // Vérifier si les champs sont remplis (pour éviter l'ajout d'un contact vide)
-        if (nomValue && prenomValue && telephoneValue) {
-            // Récupérer les contacts existants depuis localStorage
-            var contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+        // Récupérer les contacts depuis le localStorage
+        var existingContacts = localStorage.getItem("contacts");
+        var contacts = existingContacts ? JSON.parse(existingContacts) : [];
 
-            // Rechercher l'index du contact à mettre à jour (s'il existe)
-            var indexToUpdate = contacts.findIndex(function(contact) {
-                return contact.nom === nomValue && contact.prenom === prenomValue && contact.telephone === telephoneValue;
-            });
+        // Identifier le contact à mettre à jour (par exemple, en utilisant le numéro de téléphone comme identifiant unique)
+        var contactToUpdate = contacts.find(function(contact) {
+            return contact.telephone === telephone;
+        });
 
-            if (indexToUpdate !== -1) {
-                // Mettre à jour le contact existant
-                contacts[indexToUpdate] = {
-                    civilite: civiliteValue,
-                    nom: nomValue,
-                    prenom: prenomValue,
-                    telephone: telephoneValue
-                };
+        if (contactToUpdate) {
+            // Mettre à jour les informations du contact
+            contactToUpdate.civilite = civilite;
+            contactToUpdate.nom = nom;
+            contactToUpdate.prenom = prenom;
 
-                // Mettre à jour localStorage avec la liste mise à jour des contacts
-                localStorage.setItem('contacts', JSON.stringify(contacts));
+            // Mettre à jour la liste des contacts dans le localStorage
+            localStorage.setItem("contacts", JSON.stringify(contacts));
 
-                // Cacher le formulaire après la mise à jour
-                var form = document.querySelector(".Formulaire");
-                form.style.display = "none";
+            // Réinitialiser le formulaire
+            document.querySelector(".Formulaire").reset();
 
-                // Recharger la page ou effectuer d'autres actions si nécessaires
-                // window.location.reload(); // Recharger la page (exemple)
-            } else {
-                console.log("Le contact à mettre à jour n'a pas été trouvé.");
-            }
-        } else {
-            console.log("Veuillez remplir tous les champs.");
-        }
+            // Afficher un message de succès (vous pouvez remplacer cela par une autre action)
+            alert("Les informations du contact ont été mises à jour avec succès.");
+            
+            // Recharger la page pour refléter les mises à jour (optionnel)
+            window.location.reload(); // Recharge la page après la mise à jour du contact
+        } 
     });
 });
