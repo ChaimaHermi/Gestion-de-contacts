@@ -1,88 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La liste de contacts</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-
-<div class="container">
-
-
-
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
     <div class="header">
-        <h4>Le carnet d'adresses local</h4>
+      <h4>Le carnet d'adresses local</h4>
     </div>
 
     <div class="title">
-        <h1>Gérer la liste de contacts</h1>
-        <div class="btn">
-            <button class="btnAdd" id="btnAdd"><img src="../images/add.svg" alt="Ajouter"></button>
-            <button class="btnDelete"><img src="../images/delete.svg" alt="Supprimer"></button>
-        </div>
-    </div>
-
-    <div class="SaveList">
-      <h3>Contacts enregistrés</h3>
-      <div class="contactsContainer">
-          <!-- Ici seront ajoutés les contacts dynamiquement -->
+      <h1>Gérer la liste de contacts</h1>
+      <div class="btn">
+        <button class="btnAdd" id="btnAdd">
+          <img src="../images/add.svg" alt="Ajouter" />
+        </button>
+        <button class="btnDelete">
+          <img src="../images/delete.svg" alt="Supprimer" />
+        </button>
       </div>
-      <p class="noContactsMessage">Aucun contact enregistré</p>
-  </div>
-
-
-  <div class="detail_contact">
-    <h3>Détail du contact</h3>
-
-    <div>
-
-        <p>  <span class="civilite"> Monsieur</span> <span class="nom" >Rene</span> <span class="prenom"> DURAND</span></p>
     </div>
+    <div class="container">
+      <div class="SaveList">
+        <h3>Contacts enregistrés</h3>
+        <div class="contactsContainer">
+          <!-- Ici seront ajoutés les contacts dynamiquement -->
+        </div>
+        <p class="noContactsMessage">Aucun contact enregistré</p>
+      </div>
 
-    <div>
-        <p>Téléphone : <span class="telephone" >54164825</span></p>
-    </div>
-    <div>
-        <button type="submit" class="edit-button">Editer ce contact</button>
-    </div>
-</div>
+        <div class="detail_contact">
+          <h3>Détail du contact</h3>
 
-
-
-      <form class="Formulaire" method="post">
+          <div>
+            <p>
+              <span class="civilite"> Monsieur</span>
+              <span class="nom">Rene</span>
+              <span class="prenom"> DURAND</span> <br/>
+              Téléphone : <span class="telephone">54164825</span></p>
+          </div>
+          <div>
+            <button type="submit" class="edit-button">Editer ce contact</button>
+          </div>
+        </div>
+        <div class="form-container">
+      <form class="Formulaire" method="post" style="display: none">
         <fieldset>
           <legend>Saisie/modification d'un contact</legend>
-          <label for="civilite">Civilité</label> <br />
+          <label for="civilite">Civilité</label> 
           <select name="civilite" id="civilite">
             <option value="Madame">Madame</option>
             <option value="Monsieur">Monsieur</option>
             <option value="Mademoiselle">Mademoiselle</option>
-
           </select>
-          <br />
-          <label for="prenom">Prénom</label> <br />
-          <input type="text" id="prenom" name="prenom" required /><br />
-          <label for="nom">Nom</label> <br />
-          <input type="text" id="nom" name="nom" required /><br />
-          <label for="telephone">Téléphone</label> <br />
-          <input type="tel" id="telephone" name="telephone"  required/><br />
+          <label for="prenom">Prénom</label> 
+          <input type="text" id="prenom" name="prenom" required />
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required />
+          <label for="telephone">Téléphone</label> 
+          <input type="tel" id="telephone" name="telephone" required />
+          <div class="btn_form">
           <button type="submit" class="Enregistrer">Enregistrer</button>
-          <button type="reset">Effacer</button>
+          <button type="reset">Effacer</button> </div>
         </fieldset>
       </form>
-
-
-      
+      </div>
+    </div>
     
+  </div>
 
-
-      <script src="../js/ListContact.js"></script>
-      <script src="../js/DetailContact.js"></script>
-      <script src="../js/editContact.js"></script>
-      <script src="../js/viderListe.js"></script>
-      <script src="../js/ajoutContact.js"></script>
-    
-</body>
+    <script src="../js/ListContact.js"></script>
+    <script src="../js/DetailContact.js"></script>
+    <script src="../js/editContact.js"></script>
+    <script src="../js/viderListe.js"></script>
+    <script src="../js/ajoutContact.js"></script>
+  </body>
 </html>

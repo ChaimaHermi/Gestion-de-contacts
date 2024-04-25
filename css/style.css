@@ -1,108 +1,108 @@
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
-  
-}
-
-
-.container {
-  width: 100% ;
-  min-height: 100vh;
-  background-repeat: no-repeat; 
+body {
+  height: 100vh;
+  color: white;
+  width: 100%;
+  /*min-height: 100vh;*/
+  background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/background.jpg);
-  justify-content: baseline;
-  
 
-}
-
-
-
-.header {
-/* background-color:rgb(136, 172, 184);*/
- height: 60px; /* Hauteur de l'en-tête */
- width: 100%; /* Largeur de l'en-tête */
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- padding-left: 10px;
- background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
-
-}
-
-h4 {
-  color: #ffffff;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 2vh;
-  font-weight: lighter;
-}
-
-
-.title {
-  height: 60px; /* Hauteur de l'en-tête */
-  width: 100%; /* Largeur de l'en-tête */
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 2rem 0 4rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*padding-left: 10px;*/
+  background-color: rgba(125, 145, 156, 0.8);
 }
 
+.title {
+  text-align: center;
+  height: 20vh;
+  /*flex: 1;*/
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
 h1 {
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 20px;
-  padding-top: 85px;
-  font-weight: bolder;
-  text-align: center;
-  text-shadow: 2px 2px 4px #000000;
-  text-transform: uppercase;
+  text-shadow: -2px 2px 5px rgb(37, 37, 37);
 }
-
-
-.btnAdd {
-background-color: rgb(224, 78, 5);
-border-radius: 5px;
-border: 2px solid white;
-height: 50px;
-width: 50px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
-
-.btnDelete
-{
+.btnAdd,
+.btnDelete {
   background-color: rgb(224, 78, 5);
   border-radius: 5px;
   border: 2px solid white;
   height: 50px;
   width: 50px;
-
- 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 button img {
   height: 30px;
   width: 30px;
   padding: auto;
 }
-
-
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 2rem 5rem 0 5rem;
+  gap: 1rem;
+}
 .SaveList {
-  background-color: #ADD8E680; /* bleu clair avec 50% de transparence */
-  width : 740px ;
-  border-radius: 3px;
-  position: relative; /* ou absolute, fixed, ou sticky */
-  top: 130px;
-  left: 20px;
-  max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 
+  background-color: rgba(125, 145, 156, 0.8);
 
+  padding: 0;
+  height: fit-content; /*nshouf role mteeha*/
 
+  border-radius: 5px;
+}
+.contactsContainer {
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  margin-bottom: 5px;
+
+  padding: 0;
 }
 
+.Contact {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding-left: 1rem;
+  margin-bottom: 5px;
+  width: 90%;
+  padding: 0;
+  flex-direction: column;
+}
 h3 {
   color: #ffffff;
   font-size: 20px;
@@ -110,178 +110,147 @@ h3 {
   font-weight: bold;
   padding: 15px;
 }
-
-
-.Contact{
-  border-radius: 5px;
-  border: 2px solid white;
-  height: 40px;
-  width:650px;
-  margin-left: 15px ;
-  margin-right: 10px;
-  margin-bottom: 10px;
-
-
-}
-
 .Contact h5 {
   font-size: 18px;
   color: #ffffff;
   font-family: sans-serif;
   font-weight: lighter;
-  margin-left: 15px ;
+  margin-left: 15px;
   margin-right: 10px;
   font-weight: 500;
   margin-top: 10px;
-
 }
-
-
-
 .Contact img {
   width: 18px;
   height: 18px;
 }
-
 p {
   color: #ffffff;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 15px; 
+  padding: 15px;
 }
-
-
-
-
-
-
-/*-----------------------*/
-
 .detail_contact {
-  background-color: #add8e680;
-  width: 700px;
-  height: 40%;
-  color: white;
-  float: right;
-  padding: 10px;
-  margin: 30px;
-  margin-top: -123px;
-  border-radius: 2px;
- display: none;
-
+  background-color: rgba(125, 145, 156, 0.8);
+  /* padding: 1rem 1rem 1rem 1rem;*/
+  border-radius: 5px;
+  height: fit-content;
+  display: none;
 }
 .edit-button {
   background-color: rgba(227, 80, 12, 0.965);
   color: white;
-
   border-style: solid;
   border-color: white;
   padding: 10px 20px;
-
   cursor: pointer;
   float: left;
   margin: 20px;
+  border-radius: 5px;
+}
+.Contact.selected {
+  background-color: rgba(227, 80, 12, 0.965);
+  cursor: pointer;
 }
 
 
-/*----------fORMULAIRE----------*/
-
-
-
-
+.form-container {
+  /* flex: 1;*/
+  display: flex;
+  float: right;
+}
 form {
-width:600px ;
-padding: 20px;
-background-color: #add8e680;
-border: none;
-margin-right: 40px;
-border-radius: 5px;
-float: right;
-display: none; /* Cacher le formulaire initialement */
-margin-top: -123px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-top: 1%;
+  background-color: rgba(125, 145, 156, 0.8);
+  display: flex;
+  flex-direction: column;
 
-
+  height: fit-content;
+  margin-right: 60px;
+  margin-left: 0.5rem;
+  width: 40rem;
 }
 fieldset {
-background-color: none; /* Nouvelle couleur de fond */
-border: 1px solid white;
-border-radius: 5px;
-padding: 20px;
+  padding: 2rem 1rem 1rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 90%;
 }
-legend {
-background-color: rgb(224, 78, 5);
-padding: 10px;
-border-radius: 3px;
-text-align: left;
-width: 80%;
-font-size: 16px;
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-font-weight: lighter;
+#civilite {
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid white;
+  border-radius: 3px;
+  padding-left: 1rem;
 }
-
-/* Style pour les étiquettes (labels) */
-label {
-font-weight: lighter;
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 15px;
-}
-
-/* Style pour les champs de saisie */
 input[type="text"],
 input[type="tel"],
 select {
-width: 90%;
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid #ccc;
-border-radius: 3px;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: whitesmoke;
 }
 
+legend {
+  background-color: rgb(224, 78, 5);
+  padding: 10px;
+  border-radius: 5px;
+}
 
-
-
-
-/* Style pour les boutons */
+label {
+  font-weight: lighter;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+select:focus > option:checked {
+  background: rgba(227, 80, 12, 0.965) !important;
+}
 .Formulaire button {
-background-color: rgba(227, 80, 12, 0.965);
-color: #efebe9;
-
-padding: 10px 20px;
-border-color: white; /* Couleur de la bordure blanche */
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-border-style: solid;
-
-margin-right: 10px;
-
-float: right;
+  background-color: rgba(227, 80, 12, 0.965);
+  color: white;
+  padding: 0.5rem;
+  border-color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: solid;
+}
+.btn_form {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
 }
 
+.contactsContainer {
+  display: flex;
+  flex-direction: column;
 
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  margin-bottom: 5px;
 
-
-
-
-/* Style pour la div Contact sélectionnée */
-.Contact.selected {
-background-color: rgba(227, 80, 12, 0.965); /* Fond en orange lorsque la div est sélectionnée */
-color: white; /* Couleur du texte en blanc pour un contraste élevé */
-cursor: pointer; /* Curseur de souris indiquant que l'élément est cliquable */
-/* Autres styles selon vos besoins */
+  padding: 0;
 }
-
-
-.Formulaire{
-display: none;
+*/ */ .Contact.selected {
+  background-color: rgba(227, 80, 12, 0.965);
+  cursor: pointer;
 }
-
-
 @media screen and (max-width: 1000px) {
-
-.container {
-    flex-direction: column;
-}
+  #main_container {
+    grid-template-columns: 100%;
+  }
 }
