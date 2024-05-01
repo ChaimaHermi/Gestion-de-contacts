@@ -59,8 +59,6 @@ function add_Contacts() {
 
       contacts.push(contact);
       localStorage.setItem("contacts", JSON.stringify(contacts));
-
-      document.querySelector("form").reset();
       alert("Le contact a été ajouté avec succès.");
      // location.reload();
     }
