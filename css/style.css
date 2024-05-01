@@ -2,7 +2,6 @@ body {
   height: 100vh;
   color: white;
   width: 100%;
-  /*min-height: 100vh;*/
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/background.jpg);
@@ -22,14 +21,12 @@ body {
   height: 60px;
   padding: 0 2rem 0 4rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /*padding-left: 10px;*/
   background-color: rgba(125, 145, 156, 0.8);
 }
 
 .title {
   text-align: center;
   height: 20vh;
-  /*flex: 1;*/
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -66,40 +63,29 @@ button img {
   grid-template-columns: 50% 50%;
   padding: 2rem 5rem 0 5rem;
   gap: 1rem;
+  max-height: 600px;
 }
 .SaveList {
   display: flex;
   flex-direction: column;
-
   background-color: rgba(125, 145, 156, 0.8);
-
   padding: 0;
-  height: fit-content; /*nshouf role mteeha*/
-
+  max-height: 440px;
   border-radius: 5px;
+  overflow-y: scroll ; 
 }
-.contactsContainer {
-  display: flex;
-  flex-direction: column;
 
-  list-style: none;
-  align-items: center;
-  gap: 0.5rem;
-  padding-left: 1rem;
-  margin-bottom: 5px;
 
-  padding: 0;
-}
 
 .Contact {
   list-style: none;
   display: flex;
-  align-items: center;
   border: 2px solid white;
   border-radius: 5px;
   padding-left: 1rem;
   margin-bottom: 5px;
   width: 90%;
+  height: 50px;
   padding: 0;
   flex-direction: column;
 }
@@ -111,12 +97,10 @@ h3 {
   padding: 15px;
 }
 .Contact h5 {
-  font-size: 18px;
+  font-size: 15px;
   color: #ffffff;
   font-family: sans-serif;
   font-weight: lighter;
-  margin-left: 15px;
-  margin-right: 10px;
   font-weight: 500;
   margin-top: 10px;
 }
@@ -128,11 +112,10 @@ p {
   color: #ffffff;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 15px;
+  padding: 10px;
 }
 .detail_contact {
   background-color: rgba(125, 145, 156, 0.8);
-  /* padding: 1rem 1rem 1rem 1rem;*/
   border-radius: 5px;
   height: fit-content;
   display: none;
@@ -155,7 +138,7 @@ p {
 
 
 .form-container {
-  /* flex: 1;*/
+
   display: flex;
   float: right;
 }
