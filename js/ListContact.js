@@ -22,7 +22,7 @@ function showContacts() {
           contactElement.classList.add('Contact');
           contactElement.setAttribute('data-telephone', contact.telephone);
           contactElement.innerHTML = `
-              <h5><img src="../images/profile.svg" alt="Profil">${contact.nom} ${contact.prenom}</h5>
+              <h5><img src="./images/profile.svg" alt="Profil">${contact.nom} ${contact.prenom}</h5>
           `;
           contactsContainer.appendChild(contactElement);
       });
