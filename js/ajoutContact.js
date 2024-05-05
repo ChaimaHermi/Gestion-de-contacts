@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-function add_Contacts() {
+function add_Contacts(event) {
+  event.preventDefault() ;
   var civilite = document.getElementById("civilite").value;
   var prenom = document.getElementById("prenom").value;
   var nom = document.getElementById("nom").value;
@@ -60,7 +61,7 @@ function add_Contacts() {
       contacts.push(contact);
       localStorage.setItem("contacts", JSON.stringify(contacts));
       alert("Le contact a été ajouté avec succès.");
-     // location.reload();
+     location.reload();
     }
   }
 }

@@ -2,8 +2,9 @@
 var oldTelephone = '';
 
 // Fonction pour éditer un contact
-function editContact() {
-  
+function editContact(event) {
+  event.preventDefault() ;
+
   var civiliteSpan = document.querySelector(".civilite");
   var nomSpan = document.querySelector(".nom");
   var prenomSpan = document.querySelector(".prenom");

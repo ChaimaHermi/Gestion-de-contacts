@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   var deleteButton = document.querySelector(".btnDelete");
 
   deleteButton.addEventListener("click", function () {
@@ -8,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contactList.forEach(function (contact) {
       contact.remove();
+
+      var form = document.querySelector(".Formulaire");
+     form.style.display = "none";
+     window.location.reload(); 
+
     });
 
     if (document.querySelectorAll(".Contact").length === 0) {
