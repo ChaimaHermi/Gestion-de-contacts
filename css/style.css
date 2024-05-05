@@ -163,7 +163,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 90%;
+  width: 93%;
 }
 #civilite {
   height: 40px;
@@ -171,6 +171,7 @@ fieldset {
   border: 1px solid white;
   border-radius: 3px;
   padding-left: 1rem;
+  width : 93.8% ;
 }
 input[type="text"],
 input[type="tel"],
